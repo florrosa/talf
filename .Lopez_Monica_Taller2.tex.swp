@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\usepackage[spanish,activeacute]{babel}
+\usepackage{amsfonts}
+
+\title{Taller 1}
+\author{Mónica López Pola}
+
+\begin{document}
+
+\maketitle
+
+\section*{Enunciado}
+
+\textbf{Prueba que $L = \{yy^R: y \in \{0, 1\}^*\}$ no es un lenguaje regular.}
+
+\section*{Resolución}
+
+Si tomamos $n > 0$ como la longitud de la primera mitad de la cadena ($|y| = n$), podemos decir que $|x| = 2n \geq n$, $x \in L$. Además, dividimos la cadena $y$ en tres cadenas, $a, b$ y $c$, tal que $a, b, c \in L$ y $|b| > 0$, es decir $yy^R = abcc^Rb^Ra^R$. Así podemos decir que $u = a$, $v = b$ y $w = cc^Rb^Ra^R$ ($uvw = abcc^Rb^Ra^R$). De este modo, si $L$ es un lenguaje regular, debería cumplir las condiciones del lema de bombeo regular:
+\begin{enumerate}
+\item $x = uvw$
+\item $|uv| \leq n$
+\item $|v| > 0$
+\item $\forall m \geq 0, uv^mw \in L$
+\end{enumerate}
+Sin embargo, para $m = 0$ tenemos que: $uv^0w = acc^Rb^Ra^R \notin L$ porque $(ac)^R \neq c^Rb^Ra^R$, ya que $|b| = |b^R| > 0$.
+
+Por lo tanto podemos concluir que $L$ no es un lenguaje regular.
+
+\end{document}

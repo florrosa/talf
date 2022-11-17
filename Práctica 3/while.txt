@@ -1,0 +1,10 @@
+Q: (3,3,s)
+s:
+while X2 != 0 do
+    X1 := X1 + 1;
+    X2 := X2 - 1
+od;
+while X3 != 0 do
+    X1 := X1 + 1;
+    X3 := X3 - 1
+od

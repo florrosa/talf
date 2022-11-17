@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage[spanish,activeacute]{babel}
+\usepackage{amsfonts}
+
+\title{Taller 1}
+\author{Mónica López Pola}
+
+\begin{document}
+
+\maketitle
+
+\section*{Enunciado}
+
+\textbf{Una expresión regular es ambigua si una cadena puede ser generada de dos formas diferentes a partir de la misma expresión regular. Especifica si las siguientes expresiones regulares sobre el alfabeto {a,b,c,d} son ambiguas o no, y explica claramente el por qué (razona qué lenguaje generan y demuestra o refuta adecuadamente tu respuesta):}
+
+\textbf{a)}
+\textit{a((ab)*cd)* + a(ababcb*)a*}
+
+\textbf{b)}
+\textit{aab*(ab)* + ab* + a*bba*}
+
+\textbf{c)}
+\textit{aaba* + aaaba + aabba* + a}
+
+\section*{Resolución}
+
+a) Esta expresión genera cadenas que empiezan por una <<a>> seguida de $n$ cadenas formados por la repetición de la cadena <<ab>> $m$ veces y la cadena <<cd>> una vez, y cadenas formadas por una <<a>> seguida de una cadena formada por la repetición de la cadena <<ababcb>> $k$ veces y la cadena formada por el caracter <<a>> repetido $v$ veces.
+Siendo $m, n, k, v\in\mathbb{N}_{0}$.
+
+Además, la expresión es ambigua porque la cadena <<a>> se puede generar de dos formas distintas.
+
+\hspace{1cm}
+
+b) Esta expresión genera cadenas que empiezan por <<aa>>, segido por $n$ veces la cadena <<b>> y $m$ veces la cadena <<ab>>; cadenas que empiezan por <<a>> seguido por $p$ veces la cadena <<b>>; y cadenas que empiezan por $q$ veces la cadena <<a>>, seguido por la cedena <<bb>> y $k$ veces la cadena <<a>>. Siendo $m, n, p, q, k\in\mathbb{N}_{0}$.
+
+Además, es ambigua porque las cadenas <<aabb>> y <<abb>> se pueden generar de dos formas distintas cada una.
+
+\hspace{1cm}
+
+c) Esta expresión generas cadenas que empiezan por <<aab>> o <<aabb>>, seguido por $m$ veces la cadena <<a>>; la cadena <<aaaba>>; y la cadena <<a>>. Siendo $m\in\mathbb{N}_{0}$.
+
+Esta cadena no presenta ninguna ambiguedad.
+
+\end{document}
